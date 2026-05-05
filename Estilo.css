@@ -1,0 +1,108 @@
+body{
+    background-color: gray;
+
+}
+
+.Titulo-Pagina{
+    text-align: center;
+    color: #f0c040;
+    text-shadow: 0 0 12px rgba(240, 192, 64, 0.6); /*le das tono para que brille*/
+}
+
+
+/* Este apartado edita todo el contenedor de Parrafos */
+#Parrafos{
+    text-align: center;
+    color: whitesmoke;
+    background-color: gray;
+}
+.Parrafo.Inicio{
+    text-align: left;
+}
+
+/* Esto edita el contenedor de imagenes */
+#Imagenes {
+    display: flex;
+    justify-content: space-around; /* Distribuye las tarjetas uniformemente */
+    align-items: stretch;          /* Hace que todas las tarjetas midan lo mismo de alto */
+    background-color: rgb(58, 57, 57);
+    padding: 20px;
+    overflow: hidden; /* recorta la imagen al hacer zoom */
+}
+/* Esto edita el Resumen del Juego */
+.Resumen {
+    display: flex;
+    flex-direction: column;        /* Alinea los elementos uno debajo de otro */
+    width: 12%;                    /* Ajusta según cuántas fotos quieras por fila */
+    margin: 10px;
+}
+/* Esto edita El titulo, El precio , Y el Resumen */
+.Titulo, .Precio, .Parrafo-Juego {
+    text-align: center;
+}
+
+/* Color */
+.Titulo, .Precio { color: #39ff14; }
+.Parrafo-Juego { color: white; font-size: 0.9em; }
+.Menu{
+    float: right;
+}
+
+#Imagen1, #Imagen2, #Imagen3, #Imagen4,
+#Imagen5, #Imagen6, #Imagen7{
+    object-fit: cover;   /*evita que se deforme*/
+  transition: transform 0.3s ease; /*Esto da la animacion*/
+} 
+
+/* La etiqueta hover hace que tenga animacion al pasar el raton por encima */
+#Imagen1:hover, #Imagen2:hover, #Imagen3:hover, #Imagen4:hover,
+#Imagen5:hover, #Imagen6:hover, #Imagen7:hover{
+    transform: scale(1.15);
+}
+
+/* Esto Edita el contenedor de Calculadora */
+#Calculadora{
+    text-align: center;
+    color: #000000;
+    background-color: gray;
+}
+
+/*Esto edita el contenedor de Contacto */
+#Contacto{
+    text-align: center;
+    color: #000000;
+    background-color: gray;
+}
+
+
+/* Esto edita El contenedor Del menu */
+.Menu{
+    position: relative; /* Esto hace que se posicionen dentro del menu*/
+    display: inline-block; /* Esto hace que no ocupe todo el Div */
+}
+
+/* Esto edita la lista que es el menu deplegable */
+.Menu-Desplegable {
+  display: none;  /*Oculta el menu hasta que le das al boton */
+  position: absolute; /* hace que se despliege encima de la pagina sin mover nada */
+  background: #333;
+  list-style: none; /*quita los puntos */
+  padding: 0;
+  margin: 0;
+  top: 100%; /* hace que empieze donde acaba el boton*/
+  left: 0;
+  min-width: 100px;
+}
+ 
+
+.Menu-Desplegable a {
+  display: block; /*para que el clic sea mas grande*/
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.Menu:focus-within .Menu-Desplegable {
+  display: block; /* Esto hace que cuando haga click se muestre el menu*/
+}
+/* Pagina Hecha Por Aitor Garcia Nuñez
