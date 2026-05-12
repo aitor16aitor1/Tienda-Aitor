@@ -30,6 +30,12 @@ function calcular() {
     document.getElementById('resultado').textContent = 'Sin IVA: ' + total.toFixed(2) + '€ | Con IVA: ' + totalConIva.toFixed(2) + '€';
 }
 
+/* esto hace que el correo verifique si esta bien */
+    function validarEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      return regex.test(email);
+    }
+
 
 /* Formulario de contacto */
 function enviarContacto(event) {
@@ -47,9 +53,19 @@ function enviarContacto(event) {
     alert ('Por favor rellene todos los campos de forma correcta');
     return;
   }
+
+  if (!validarEmail(correo)) {
+    alert('El correo no es válido. Asegúrate de que tiene un dominio completo');
+    document.getElementById('Correo').focus();
+    return;
+  }
+
+
 /* si todo esta bien te muestra un mensaje de confirmacion */
   alert ('Mensaje enviado correctamente, ' + nombre + '! Te contestaremos en aproximadamente 24h. ');
 }
+
+
 
 
 /* Pagina Hecha por Aitor Garcia Nuñez */
